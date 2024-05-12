@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Dancing+Script:wght@400;700&family=Montserrat:wght@100;400&family=Moul&family=Pacifico&display=swap');
+
+:root {
+  --theme-color: rgb(70, 209, 255);
+  --swiper-navigation-color: black;
+  --swiper-navigation-size: 100px;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat';
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between; /* Aligns items across the main axis */
+  width: 100%;
+  align-items: center; /* Centers items along the cross axis */
+}
+
+.navBarLeft, .updateTime {
+  flex: 1; /* Allows each child to grow and take up equal space */
+}
+
+.navTitle {
+  flex: 2
+}
+
+.navTitle {
+  text-align: center;
+  margin: 0; /* Removes default margin */
+  padding: 10px;
+}
+
+.updateTime {
+  text-align: right;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  padding-right: 20px;
+}
+
+header {
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+  height: 100px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  background-color: var(--theme-color);
+}
+
+img {
+  width: 100%;        /* This will make the image take the full width of the container */
+  height: auto;       /* This will maintain the original aspect ratio of the image */
+  object-fit: cover;  /* This ensures that the image will cover the entire container, potentially cropping some parts */
+  display: block;     /* To remove any default spacing at the bottom */
+}
+
+.mySwiper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  /* flex-wrap: wrap; Allow items to wrap to the next row */
+  justify-content: center; /* Distribute items evenly between columns */
+  align-items: center; /* Align items to the top of each column */
+}
+
+.searchResult {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+}
+
+.swiper {
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+  margin: 20px;
+  border-radius: 10px;
+  width: 49%;
+  margin-bottom: 0;
+}
+
+.searchTerm {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  opacity: 0.8;
+  color: black;
+  background-color: white; /* use this if you want the background of the text box to be semi-transparent white, remove this line if you don't want any background */
+  padding: 10px; /* adjust as needed */
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.swiperContent {
+  /* border: 2px solid red; */
+}
+
+.swipeImg {
+  width: 100%;
+  height: 600px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 90px;
+  padding-bottom: 10px;
+}
+
+.priceDiv {
+  display: flex;
+  flex-grow: 1;
+  margin-right: 5px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-left: 8px;
+  flex-direction: column;
+}
+
+.price {
+  color: green;
+  background-color: white;
+  padding: 2px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.nameDiv {
+  display: flex;
+  height: 100%;
+  flex-grow: 2;
+  align-items: center;
+  justify-content: center;
+  text-overflow: ellipsis;
+  flex-direction: column;
+}
+
+.buttonDiv {
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  padding-right: 8px;
+}
+
+.viewButton {
+  background-color: var(--theme-color);
+  color: black;
+  height: 30px;
+  width: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  background-color: white;
+  border: 1px solid black;
+  /* border-radius: 20px; */
+  opacity: 0.8;
+  width: 80px;
+  height: 40px;
+  color: black;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  body {
+      font-size: 14px; /* Adjust font size */
+  }
+  header {
+      font-size: 24px; /* Smaller font size for the header */
+  }
+  .swiperContent, .meta, .priceDiv, .nameDiv, .buttonDiv {
+      /* Adjust layout and sizes for these classes */
+  }
+
+  .swiper-wrapper {
+    width: 100%;
+  }
+
+  .searchResult {
+    flex-direction: column;
+    width: 100%;
+
+  }
+  
+  .swiperContent {
+    width: 100%;
+  }
+
+  .mySwiper {
+    padding: 20px;
+  }
+
+  header {
+    font-size: 30px;
+    height: 60px;
+  }
+
+  .swiper {
+    width: 95%;
+  }
+  
+  .updateTime, .navBarLeft {
+    display:none;
+  }
+  /* Add more styles as needed */
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+      font-size: 14px; /* Adjust font size */
+  }
+  header {
+      font-size: 24px; /* Smaller font size for the header */
+  }
+  .swiperContent, .meta, .priceDiv, .nameDiv, .buttonDiv {
+      /* Adjust layout and sizes for these classes */
+  }
+  /* Add more styles as needed */
+  .searchResult {
+    width: 100%;
+  }
+
+  .swipeImg {
+    width: 100%;
+    height: 400px;
+  }
+
+  header {
+    font-size: 30px;
+    height: 60px;
+  }
+
+  .swiper {
+    margin: 15px;
+    margin-bottom: 0;
+  }
+
+  .updateTime, .navBarLeft {
+    display:none;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+      font-size: 14px; /* Adjust font size */
+  }
+  header {
+      font-size: 24px; /* Smaller font size for the header */
+  }
+  .swiperContent, .meta, .priceDiv, .nameDiv, .buttonDiv {
+      /* Adjust layout and sizes for these classes */
+  }
+  /* Add more styles as needed */
+  .searchResult {
+    width: 100%;
+  }
+
+  .swipeImg {
+    width: 100%;
+    height: 300px;
+  }
+
+  header {
+    font-size: 30px;
+    height: 60px;
+  }
+
+  .updateTime, .navBarLeft {
+    display:none;
+  }
+
+}
